@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open House Invitation</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Add custom styles here for the new elements */
+    .countdown {
+      font-size: 24px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .dynamic-background {
+      background-image: url('daytime.jpg'); /* Default background image */
+      background-size: cover;
+      height: 300px; /* Adjust height as needed */
+    }
+
+    .music-player {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .photo-gallery {
+      text-align: center;
+      margin-top: 20px;
+    }
+    /* Add custom styles here for the new elements */
+    .participant-table {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .participant-table th,
+    .participant-table td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    /* Styles for the background card */
+    .background-card {
+      background-color: #ff95e8; /* Light pink background color */
+      border-radius: 20px; /* Rounded corners */
+      padding: 20px; /* Padding inside the card */
+      margin-top: 50px; /* Spacing from the top */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    }
+
+    /* Styles for the unique title */
+    .title {
+      font-size: 36px;
+      color: #B721FF; /* Purple color */
+      text-align: center;
+      margin-bottom: 20px; /* Spacing below the title */
+      font-family: 'Lato', sans-serif; /* Matching font with other styles */
+    }
+
+    /* Styles for the quote */
+    .quote {
+      font-style: italic;
+      color: #ffffff; /* White color for text */
+      background-color: #ff7f7f; /* Light pink background matching a couple */
+      text-align: center;
+      margin-bottom: 10px; /* Spacing below the quote */
+      font-size: 18px;
+      font-family: 'Lato', sans-serif; /* Matching font with other styles */
+      padding: 10px; /* Padding around the quote */
+      border-radius: 10px; /* Rounded corners */
+      font-weight: bold; /* Bold text */
+    }
+
+    /* Styles for the scripture */
+    .scripture {
+      font-style: italic;
+      color: #ffffff; /* White color for text */
+      background-color: #ff7f7f; /* Light pink background matching a couple */
+      text-align: center;
+      font-size: 18px;
+      font-family: 'Lato', sans-serif; /* Matching font with other styles */
+      padding: 10px; /* Padding around the scripture */
+      border-radius: 10px; /* Rounded corners */
+      font-weight: bold; /* Bold text */
+    }
+
+    .scroll-down-text {
+      text-align: center;
+      margin-top: -150px;
+      color: #ffffff; /* Adjust color as needed */
+      font-size: 46px;
+      font-weight: bold;/* Adjust font size as needed */
+    }
+
+    /* Styles for the button */
+    button {
+      padding: 10px 20px;
+      background-color: #ff0000; /* Light pink background color */
+      color: #ffffff; /* White text color */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Center alignment */
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Styles for the ticket modal */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px; /* Location of the box */
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto; /* 5% from the top, centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Style for the button */
+/* Center the button horizontally */
+a {
+  display: block;
+  margin: 0 auto;
+  width: fit-content; /* Adjust width based on content */
+  padding: 10px 20px;
+  background-color: #ff0000; /* Light pink background color */
+  color: #ffffff; /* White text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  font-family: Arial, sans-serif; /* Font style */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Cursor style */
+}
+
+
+/* Hover effect for the button */
+a:hover {
+  background-color: #ff6666; /* Light pink background color on hover */
+}
+
+
+    
+  </style>
+</head>
+<body>
+  <!-- Background card design -->
+  <div class="background-card">
+    <!-- Unique title and quotes related to Open House -->
+    <div class="title">
+      Open House Invitation at the Church of Jesus Christ of Latter-day Saints
+    </div>
+    <div class="quote">
+      "Enter the house of the Lord, where blessings abound and spirits are lifted." - Ramanathapuram YSA
+    </div>
+    
+    <div class="scripture">
+      "And now abideth faith, hope, charity, these three; but the greatest of these is charity." - 1 Corinthians 13:13
+    </div>
+  </div>
+
+     <!-- Countdown Timer -->
+     <div class="countdown">
+      <span class="countdown-text">Countdown Timer:</span> <span id="countdown">Calculating...</span>
+    </div>
+
+  <div class="wrapper">
+    <div class="container">
+      <div class="columns form_container">
+        <div class="column is-half spooky_bg2">
+        </div>
+        <div class="column is-half input_container">
+          <h1>You're Invited!</h1>
+          <h2>Join us for an Open House celebration</h2>
+          <p>Come join us for a wonderful evening of fellowship and joy!</p>
+          <div class="mt-5">
+            <input type="text" name="name" placeholder="Enter your Name" style="" id="input">
+            <input type="submit" name="" value="Join the Open House " class="submit" onclick="generateTicket()">
+          </div>
+          <div class="mt-2 ml-2">
+            <span id="error"></span>
+          </div>
+        </div>
+        <div class="column is-half spooky_bg">
+        </div>
+      </div>
+    </div>
+  </div>
+
+     <!-- Button to open Google Maps with directions -->
+  <a href="https://www.google.co.in/maps/place/The+Church+Of+Jesus+Christ+Of+Latter+Day+Saints/@10.9982851,76.9145073,13z/data=!4m10!1m2!2m1!1slds+coimbatore!3m6!1s0x3ba859c6d35080b1:0xb60a030bc1d22a5a!8m2!3d10.9982851!4d76.990725!15sCg5sZHMgY29pbWJhdG9yZSIDiAEBkgEQY2hyaXN0aWFuX2NodXJjaOABAA!16s%2Fg%2F1wv_qnrl?entry=ttu" target="_blank">
+    Get Directions
+  </a>
+
+    
+
+  <div class="ticket-container">
+    <div class="ticket" role="img" aria-label="A jagged admit one pink ticket, with serial number 123456 over a white background">
+      <p id="ticketText"><span></span></p>
+    </div>
+  
+    <svg>
+      <defs>
+        <filter id='roughpaper' x='0%' y='0%' width='100%' height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency='0.15' result='noise' numOctaves="5" />
+          <feDiffuseLighting in='noise' lighting-color='var(--red)' surfaceScale='1.3'>
+            <feDistantLight azimuth='45' elevation='70' />
+          </feDiffuseLighting>
+        </filter>
+        <filter class='filter' id='warp'>
+          <feturbulence basefrequency='0.02 0.02' id='frequency14' numoctaves='1' result='noise' seed='1' type='fractalNoise'></feturbulence>
+          <fedisplacementmap id='displacement14' in2='fractalNoise' in='SourceGraphic' scale='10'></fedisplacementmap>
+        </filter>
+      </defs>
+    </svg>
+  </div>
+  
+
+  <script>
+function generateTicket() {
+  // Get the entered name from the input field
+  const name = document.getElementById("input").value;
+
+  // Redirect to the ticket page with the name as a parameter
+  window.location.href = "ticket.html?name=" + encodeURIComponent(name);
+}
+
+
+    </script>
+
+
+
+<script>
+  // Set the date and time for March 26th, 2024, 00:00:00
+  const targetDate = new Date("March 26, 2024 00:00:00").getTime();
+
+  // Update the countdown every second
+  const timer = setInterval(function() {
+      // Get the current date and time
+      const now = new Date().getTime();
+
+      // Calculate the remaining time
+      const distance = targetDate - now;
+
+      // Check if the countdown has reached zero
+      if (distance <= 0) {
+          clearInterval(timer); // Stop the timer
+          document.getElementById("countdown").innerHTML = "The target date has passed!";
+      } else {
+          // Calculate days, hours, minutes, and seconds
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Display the remaining time
+          document.getElementById("countdown").innerHTML = days + " days " + hours + ":" + minutes + ":" + seconds;
+      }
+  }, 1000); // Update every second
+</script>
+
+
+  </script>
+</body>
+</html>
